@@ -8,7 +8,7 @@ private:
 public:
 	GLogic();
 
-	char boardArray[8][8];
+	char boardArray[9][9];
 
 	bool done = false; //Game loop variable
 	bool PlayerTurn = true; //Check for player turn variable
