@@ -1,3 +1,5 @@
+#include "pch.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -52,33 +54,33 @@ int main()
 
 	while (!GLogic.done)
 	{
-		
+
 		int X, Y, XNew, YNew;
 
 		cin >> X >> Y >> XNew >> YNew;
 
-		if (GLogic.boardArray[X][Y] = pieces.rR || pieces.rN || pieces.rB || pieces.rQ || pieces.rB2 || pieces.rN2 || pieces.rR2 || pieces.rP1 || pieces.rP2 || pieces.rP3 || pieces.rP4 || pieces.rP5 || pieces.rP6 || pieces.rP7 || pieces.rP8);
+		if (GLogic.boardArray[X][Y] = pieces.rR || pieces.rN || pieces.rB || pieces.rQ || pieces.rB2 || pieces.rN2 || pieces.rR2 || pieces.rP1 || pieces.rP2 || pieces.rP3 || pieces.rP4 || pieces.rP5 || pieces.rP6 || pieces.rP7 || pieces.rP8)
 		{
 			if (GLogic.boardArray[XNew][YNew] = pieces.rK)
 			{
 				GLogic.done = true;
 			}
-		GLogic.boardArray[X][Y] = GLogic.boardArray[XNew][YNew];
-		GLogic.boardArray[X][Y] = NULL;
+			GLogic.boardArray[X][Y] = GLogic.boardArray[XNew][YNew];
+			GLogic.boardArray[X][Y] = NULL;
 		}
 
 		//player timer will sit here
 
-        GLogic.PlayerTurn= false;
+		GLogic.PlayerTurn = false;
 
-        //once player turn has been taken AI will take control.
-        if (!GLogic.PlayerTurn)
-        {
+		//once player turn has been taken AI will take control.
+		if (!GLogic.PlayerTurn)
+		{
 			pieces.PieceCollection();
-        }
-    }
+		}
+	}
 
-    return 0;
+	return 0;
 }
 
 
