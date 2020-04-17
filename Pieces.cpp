@@ -30,7 +30,40 @@ void pieces::PieceCollection()
 				if (GLogic.boardArray[i][j] = rR)
 				{
 					int RndMove = (rand() % 8) + 1;
-
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + RndMove, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + RndMove][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j + RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j + RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - RndMove, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - RndMove][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j - RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j - RndMove];
+					}
+					//Movement
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + RndMove, j);
@@ -75,6 +108,40 @@ void pieces::PieceCollection()
 			{
 				if (GLogic.boardArray[i][j] = rN)
 				{
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 2, j + 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 2][j + 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - 2, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - 2][j - 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 2, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 2][j - 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 2, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 2][j - 1];
+					}
+					//move
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + 2, j + 1);
@@ -120,7 +187,24 @@ void pieces::PieceCollection()
 				if (GLogic.boardArray[i][j] = rB)
 				{
 					int RndMove = (rand() % 8) + 1;
-
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + RndMove, j + RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + RndMove][j + RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - RndMove, j - RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - RndMove][j - RndMove];
+					}
+					//move
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + RndMove, j + RndMove);
@@ -149,7 +233,56 @@ void pieces::PieceCollection()
 				if (GLogic.boardArray[i][j] = rQ)
 				{
 					int RndMove = (rand() % 8) + 1;
-
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + RndMove, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + RndMove][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j + RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j + RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - RndMove, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - RndMove][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j - RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j - RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + RndMove, j + RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + RndMove][j + RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - RndMove, j - RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - RndMove][j - RndMove];
+					}
+					//move
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + RndMove, j);
@@ -209,6 +342,56 @@ void pieces::PieceCollection()
 			{
 				if (GLogic.boardArray[i][j] = rK)
 				{
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 1, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 1][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j + 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j + 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - 1, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - 1][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j - 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 1][j + 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - 1, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - 1][j - 1];
+					}
+					//move
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + 1, j);
@@ -270,6 +453,24 @@ void pieces::PieceCollection()
 				{
 					int RndMove = (rand() % 8) + 1;
 
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + RndMove, j + RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + RndMove][j + RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - RndMove, j - RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - RndMove][j - RndMove];
+					}
+					//move
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + RndMove, j + RndMove);
@@ -297,6 +498,40 @@ void pieces::PieceCollection()
 			{
 				if (GLogic.boardArray[i][j] = rN2)
 				{
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 2, j + 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 2][j + 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - 2, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - 2][j - 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 2, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 2][j - 1];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + 2, j - 1);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + 2][j - 1];
+					}
+					//move
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + 2, j + 1);
@@ -342,6 +577,40 @@ void pieces::PieceCollection()
 				{
 					int RndMove = (rand() % 8) + 1;
 
+					//attack
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i + RndMove, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i + RndMove][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j + RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j + RndMove];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i - RndMove, j);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i - RndMove][j];
+					}
+					if (GLogic.validMove = false)
+					{
+						GLogic.ValidMoveEnemy(i, j - RndMove);
+					}
+					if (GLogic.validMove = true)
+					{
+						GLogic.boardArray[i][j - RndMove];
+					}
+					//Movement
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i + RndMove, j);
@@ -358,7 +627,6 @@ void pieces::PieceCollection()
 					{
 						GLogic.boardArray[i][j + RndMove];
 					}
-
 					if (GLogic.validMove = false)
 					{
 						GLogic.Validmove(i - RndMove, j);
@@ -389,7 +657,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -397,7 +665,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -424,7 +692,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -432,7 +700,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -459,7 +727,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -467,7 +735,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -494,7 +762,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -502,7 +770,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -529,7 +797,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -537,7 +805,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -564,7 +832,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -572,7 +840,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -599,7 +867,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -607,7 +875,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -634,7 +902,7 @@ void pieces::PieceCollection()
 				{
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j + 1);
+						GLogic.ValidMoveEnemy(i + 1, j + 1);
 					}
 					if (GLogic.validMove = true)
 					{
@@ -642,7 +910,7 @@ void pieces::PieceCollection()
 					}
 					if (GLogic.validMove = false)
 					{
-						GLogic.ValidmovePawn(i + 1, j - 1);
+						GLogic.ValidMoveEnemy(i + 1, j - 1);
 					}
 					if (GLogic.validMove = true)
 					{
