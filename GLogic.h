@@ -15,5 +15,5 @@ public:
 	bool validMove = false; //checking to make sure moves are valid
 
 	void Validmove(int X, int Y);
-	void ValidmovePawn(int X, int Y);
+	void ValidMoveEnemy(int X, int Y);
 };
