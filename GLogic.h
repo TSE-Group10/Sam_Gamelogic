@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class GLogic
 {
@@ -8,7 +9,7 @@ private:
 public:
 	GLogic();
 
-	char boardArray[9][9];
+	std::string boardArray[10][10];
 
 	bool done = false; //Game loop variable
 	bool PlayerTurn = true; //Check for player turn variable
