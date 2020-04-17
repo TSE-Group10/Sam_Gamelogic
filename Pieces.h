@@ -17,8 +17,8 @@ public:
 	string PlayerBlue;
 
 	// Declaration for placeholder piece names
-	char bR = 'R', bN = 'N', bB = 'B', bQ = 'Q', bK = 'K', bB2 = 'B', bN2 = 'N', bR2 = 'R', bP1 = 'P', bP2 = 'P', bP3 = 'P', bP4 = 'P', bP5 = 'P', bP6 = 'P', bP7 = 'P', bP8 = 'P';
-	char rR = 'R', rN = 'N', rB = 'B', rQ = 'Q', rK = 'K', rB2 = 'B', rN2 = 'N', rR2 = 'R', rP1 = 'P', rP2 = 'P', rP3 = 'P', rP4 = 'P', rP5 = 'P', rP6 = 'P', rP7 = 'P', rP8 = 'P';
+	string bR = "bR ", bN = "bN ", bB = "bB ", bQ = "bQ ", bK = "bK ", bB2 = "bB2", bN2 = "bN2", bR2 = "bR2", bP1 = "bP1", bP2 = "bP2", bP3 = "bP3", bP4 = "bP4", bP5 = "bP5", bP6 = "bP6", bP7 = "bP7", bP8 = "bP8";
+	string rR = "rR ", rN = "rN ", rB = "rB ", rQ = "rQ ", rK = "rK ", rB2 = "rB2", rN2 = "rN2", rR2 = "rR2", rP1 = "rP1", rP2 = "rP2", rP3 = "rP3", rP4 = "rP4", rP5 = "rP5", rP6 = "rP6", rP7 = "rP7", rP8 = "rP8";
 
 	int RndPiece; //random number generator for the AI
 
