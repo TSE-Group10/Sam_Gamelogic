@@ -1,0 +1,9 @@
+This is a simple chess logic, player inputs two values, that of the row and column for example '2 1' which will select the pawn in the first position, they will be required to put two more values in for the new position for example '3 1' which will move the pawn one position down. this would all happen with one command.
+
+an example of inputs would be as such,
+2 1 3 1
+which would move the pawn in the first postion on the left down 1 row.
+
+The player is the top end of the board where the computer controls the bottom half.
+
+discliamer: there is no limit on how the player can move, rules have not been applied to the player to strickly lock them into the piece rules, this is due to the way the game was supposed to be played, that of having a robot connected to it. players in the real would do not have these restrictions thus they were not added to the virtual game.
