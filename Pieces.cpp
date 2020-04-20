@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 pieces::pieces()
 {
 }
@@ -29,90 +28,98 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rR")
+					if (boardArray[i][j] == "rR")
 					{
 						int RndMove = (rand() % 9) + 1;
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + RndMove, j);
+							ValidMoveEnemy(i + RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j] = GLogic.boardArray[i][j]; 
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j] = boardArray[i][j]; 
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j + RndMove);
+							ValidMoveEnemy(i, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - RndMove, j);
+							ValidMoveEnemy(i - RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j - RndMove);
+							ValidMoveEnemy(i, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//Movement
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + RndMove, j);
+							Validmove(i + RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j + RndMove);
+							Validmove(i, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - RndMove, j);
+							Validmove(i - RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j - RndMove);
+							Validmove(i, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -124,89 +131,97 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rN")
+					if (boardArray[i][j] == "rN")
 					{
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 2, j + 1);
+							ValidMoveEnemy(i + 2, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - 2, j - 1);
+							ValidMoveEnemy(i - 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 2, j - 1);
+							ValidMoveEnemy(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 2, j - 1);
+							ValidMoveEnemy(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//move
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 2, j + 1);
+							Validmove(i + 2, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - 2, j - 1);
+							Validmove(i - 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 2, j - 1);
+							Validmove(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 2, j - 1);
+							Validmove(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -217,50 +232,54 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rB")
+					if (boardArray[i][j] == "rB")
 					{
 						int RndMove = (rand() % 9) + 1;
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + RndMove, j + RndMove);
+							ValidMoveEnemy(i + RndMove, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - RndMove, j - RndMove);
+							ValidMoveEnemy(i - RndMove, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//move
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + RndMove, j + RndMove);
+							Validmove(i + RndMove, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - RndMove, j - RndMove);
+							Validmove(i - RndMove, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -271,130 +290,142 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rQ")
+					if (boardArray[i][j] == "rQ")
 					{
 						int RndMove = (rand() % 9) + 1;
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + RndMove, j);
+							ValidMoveEnemy(i + RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j + RndMove);
+							ValidMoveEnemy(i, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - RndMove, j);
+							ValidMoveEnemy(i - RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j - RndMove);
+							ValidMoveEnemy(i, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + RndMove, j + RndMove);
+							ValidMoveEnemy(i + RndMove, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - RndMove, j - RndMove);
+							ValidMoveEnemy(i - RndMove, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//move
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + RndMove, j);
+							Validmove(i + RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j + RndMove);
+							Validmove(i, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - RndMove, j);
+							Validmove(i - RndMove, j);
 						}
-						if (GLogic.validMove = true)
+						if (validMove = true)
 						{
-							GLogic.boardArray[i - RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j - RndMove);
+							Validmove(i, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + RndMove, j + RndMove);
+							Validmove(i + RndMove, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - RndMove, j - RndMove);
+							Validmove(i - RndMove, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -405,129 +436,141 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rK")
+					if (boardArray[i][j] == "rK")
 					{
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j);
+							ValidMoveEnemy(i + 1, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j + 1);
+							ValidMoveEnemy(i, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - 1, j);
+							ValidMoveEnemy(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j - 1);
+							ValidMoveEnemy(i, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i + 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//move
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i + 1, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j + 1);
+							Validmove(i, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j - 1);
+							Validmove(i, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j + 1);
+							Validmove(i + 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - 1, j - 1);
+							Validmove(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -538,51 +581,55 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rB2")
+					if (boardArray[i][j] == "rB2")
 					{
 						int RndMove = (rand() % 9) + 1;
 
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + RndMove, j + RndMove);
+							ValidMoveEnemy(i + RndMove, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - RndMove, j - RndMove);
+							ValidMoveEnemy(i - RndMove, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//move
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + RndMove, j + RndMove);
+							Validmove(i + RndMove, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - RndMove, j - RndMove);
+							Validmove(i - RndMove, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -593,89 +640,97 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rN2")
+					if (boardArray[i][j] == "rN2")
 					{
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 2, j + 1);
+							ValidMoveEnemy(i + 2, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - 2, j - 1);
+							ValidMoveEnemy(i - 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 2, j - 1);
+							ValidMoveEnemy(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 2, j - 1);
+							ValidMoveEnemy(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//move
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 2, j + 1);
+							Validmove(i + 2, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - 2, j - 1);
+							Validmove(i - 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 2, j - 1);
+							Validmove(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 2, j - 1);
+							Validmove(i + 2, j - 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 2][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + 2][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -686,91 +741,99 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rR2")
+					if (boardArray[i][j] == "rR2")
 					{
 						int RndMove = (rand() % 9) + 1;
 
 						//attack
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + RndMove, j);
+							ValidMoveEnemy(i + RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j + RndMove);
+							ValidMoveEnemy(i, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i - RndMove, j);
+							ValidMoveEnemy(i - RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i, j - RndMove);
+							ValidMoveEnemy(i, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						//Movement
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + RndMove, j);
+							Validmove(i + RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i + RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j + RndMove);
+							Validmove(i, j + RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j + RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j + RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i - RndMove, j);
+							Validmove(i - RndMove, j);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i - RndMove][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - RndMove][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i, j - RndMove);
+							Validmove(i, j - RndMove);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i][j - RndMove] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i][j - RndMove] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -782,37 +845,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP1")
+					if (boardArray[i][j] == "rP1")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] =  " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -823,41 +893,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP2")
+					if (boardArray[i][j] == "rP2")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
 
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 						
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
 
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -868,37 +941,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP3")
+					if (boardArray[i][j] == "rP3")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -909,37 +989,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP4")
+					if (boardArray[i][j] == "rP4")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -950,37 +1037,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP5")
+					if (boardArray[i][j] == "rP5")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -991,37 +1085,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP6")
+					if (boardArray[i][j] == "rP6")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -1032,37 +1133,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP7")
+					if (boardArray[i][j] == "rP7")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -1073,37 +1181,44 @@ void pieces::PieceCollection()
 			{
 				for (int j = 1; j < 9; j++)
 				{
-					if (GLogic.boardArray[i][j] == "rP8")
+					if (boardArray[i][j] == "rP8")
 					{
-						if (GLogic.validMove == false)
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j + 1);
+							ValidMoveEnemy(i - 1, j + 1);
 						}
-						if (GLogic.validMove == true)
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j + 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j + 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.ValidMoveEnemy(i + 1, j - 1);
+							ValidMoveEnemy(i - 1, j - 1);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j - 1] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j - 1] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
-						if (GLogic.validMove == false)
+
+						if (validMove == false)
 						{
-							GLogic.Validmove(i + 1, j);
+							Validmove(i - 1, j);
 						}
-						if (GLogic.validMove == true)
+
+						if (validMove == true)
 						{
-							GLogic.boardArray[i + 1][j] = GLogic.boardArray[i][j];
-							GLogic.boardArray[j][i] = " * ";
+							boardArray[i - 1][j] = boardArray[i][j];
+							boardArray[i][j] = " * ";
 							pieceTaken = true;
+							break;
 						}
 					}
 				}
@@ -1114,7 +1229,31 @@ void pieces::PieceCollection()
 			break;
 		}
 	}
+	pieceTaken = false;
+}
+void pieces::Validmove(int X, int Y)
+{
+	if (boardArray[X][Y] == " * ")
+	{
+		validMove = true;
+	}
+	if (boardArray[X][Y] == "bK")
+	{
+		//done = true;
+	}
 
 }
 
+void pieces::ValidMoveEnemy(int X, int Y)
+{
+	if (boardArray[X][Y] == "bR" || "bN" || "bB" || "bQ" || "bB2" || "bN2" || "bR2" || "bP1" || "bP2" || "bP3" || "bP4" || "bP5" || "bP6" || "bP7" || "bP8")
+	{
+		validMove = true;
+	}
+	if (boardArray[X][Y] == "bK")
+	{
+		//done = true;
+	}
+
+}
 
