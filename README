@@ -7,3 +7,5 @@ which would move the pawn in the first postion on the left down 1 row.
 The player is the top end of the board where the computer controls the bottom half.
 
 discliamer: there is no limit on how the player can move, rules have not been applied to the player to strickly lock them into the piece rules, this is due to the way the game was supposed to be played, that of having a robot connected to it. players in the real would do not have these restrictions thus they were not added to the virtual game.
+
+Each indivual file has been added as well as a zip file to allow the game to be run from Visual studio using the sln file within.
